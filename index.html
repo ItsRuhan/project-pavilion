@@ -2,20 +2,150 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Portfolio & Server</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ruhans.dev | Self-Hosted Portfolio</title>
     <style>
-        body { font-family: sans-serif; margin: 40px; background-color: #f4f4f9; color: #333; }
-        h1 { color: #0056b3; }
-        .project { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        body {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .status-badge {
+            background-color: #2ea44f;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        /* Terminal Window Styling */
+        .terminal-window {
+            background-color: #2d0922; /* Classic Ubuntu Terminal Purple */
+            border: 1px solid #4a1539;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: left;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        .terminal-header {
+            background-color: #3d3d3d;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .buttons {
+            display: flex;
+            gap: 8px;
+        }
+        .button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .close { background-color: #ff5f56; }
+        .minimize { background-color: #ffbd2e; }
+        .maximize { background-color: #27c93f; }
+        .terminal-title {
+            color: #dfdbd2;
+            font-size: 0.9rem;
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            left: 0;
+            font-family: monospace;
+            pointer-events: none;
+        }
+        .terminal-body {
+            padding: 15px;
+            margin: 0;
+            overflow-x: auto;
+        }
+        pre {
+            margin: 0;
+            font-family: 'Ubuntu Mono', 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            line-height: 1.2rem;
+            color: #dfdbd2;
+        }
+        /* Highlights specifically for the Ubuntu orange accents */
+        .orange { color: #e95420; }
+        .green { color: #27c93f; }
     </style>
 </head>
 <body>
-    <h1>Welcome to my Self-Hosted Node</h1>
-    <p>This site is currently running on a repurposed, headless HP laptop.</p>
-    
-    <div class="project">
-        <h2>Current Project: Repurposing my old laptop as a web hosting server</h2>
-        <p>Documenting the process of turning my old HP Pavilion laptop into a headless server that I can use to host my own blog.</p>
+
+    <div class="container">
+        <h1>ruhans.dev</h1>
+        <div class="status-badge">● Live & Self-Hosted</div>
+        <p>Hi There! This website is running bare-metal on a repurposed laptop - deployed right from my bedroom - via an encrypted Cloudflare Tunnel.</p>
+        
+        <!-- New update and GitHub repository line -->
+        <p style="color: #b0b0b0; font-size: 0.95rem; margin-top: -5px; margin-bottom: 2rem;">
+            I am currently developing the frontend - check back here for updates or track the progress directly in the 
+            <a href="https://github.com/ItsRuhan/project-pavilion" target="_blank" style="color: #58a6ff; text-decoration: none; font-weight: 500;">GitHub repo</a>.
+        </p>
+        <p style="color: #b0b0b0; font-size: 0.95rem; margin-top: -5px; margin-bottom: 2rem;">
+            The next version of this website will contain a detailed blog post about the setup process. Stay Tuned!
+        </p>
+        <p style="color: #b0b0b0; font-size: 0.95rem; margin-top: -5px; margin-bottom: 2rem;">
+            In the meantime, please enjoy this vibecoded mock terminal window. I have captured the <code>fastfetch</code> output to display the specs of this machine and the environment it is running in.
+        </p>
+        
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="buttons">
+                    <div class="button close"></div>
+                    <div class="button minimize"></div>
+                    <div class="button maximize"></div>
+                </div>
+                <div class="terminal-title">ruhans@hp-pavilion: ~</div>
+            </div>
+            <div class="terminal-body">
+<pre>ruhans@hp-pavilion:~$ fastfetch
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.;looooooooc&nbsp;&nbsp;.oooooooooo'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="orange">OS:</span> Ubuntu 26.04 LTS (Resolute Raccoon) x86_64
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.;looooool:,''.&nbsp;&nbsp;:ooooooooooc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="orange">Host:</span> HP Pavilion Notebook
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;looool;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'oooooooooo,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="orange">Kernel:</span> Linux 7.0.0-28-generic
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;clool'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.cooooooc.&nbsp;&nbsp;,,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="orange">Uptime:</span> 3 hours, 36 mins
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;......&nbsp;&nbsp;.:oo,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="orange">Packages:</span> 724 (dpkg)
+&nbsp;&nbsp;.;clol:,.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.loooo'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="orange">Shell:</span> bash 5.3.9
+&nbsp;:ooooooooo,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'ooool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="orange">Display (CMN1487):</span> 1366x768 in 14", 60 Hz [Built-in]
+'ooooooooooo.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loooo.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="orange">Terminal:</span> MainThread
+'ooooooooool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coooo.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="orange">CPU:</span> Intel(R) Core(TM) i3-7100U (4) @ 2.40 GHz
+&nbsp;,loooooooc.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.loooo.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="orange">GPU:</span> Intel HD Graphics 620 @ 1.00 GHz [Integrated]
+&nbsp;&nbsp;.,;;;'.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;ooooc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="orange">Memory:</span> 1.65 GiB / 7.14 GiB (23%)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;,ooool.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="orange">Swap:</span> 0 B / 4.00 GiB (0%)
+&nbsp;&nbsp;&nbsp;&nbsp;.cooooc.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;..',,'.&nbsp;&nbsp;.cooo.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="orange">Disk (/):</span> 7.61 GiB / 113.80 GiB (7%) - ext4
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;ooooo:.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;oooooooc.&nbsp;&nbsp;:l.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="orange">Local IP (eno1):</span> 192.168.0.100/24
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.coooooc,..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coooooooooo.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="orange">Locale:</span> en_GB.UTF-8
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.:ooooooolc:. .ooooooooooo'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.':loooooo;&nbsp;&nbsp;,oooooooooc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;..';::c'&nbsp;&nbsp;.;loooo:'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+ruhans@hp-pavilion:/var/www/html$ <span class="green">■</span></pre>
+            </div>
+        </div>
     </div>
+
 </body>
 </html>
